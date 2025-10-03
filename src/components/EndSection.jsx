@@ -1,5 +1,21 @@
+
+import { toast,ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const EndSection = () => {
+
+  const showLoginToast = () => {
+    toast.warn("Login first!", {
+      position: "top-center",
+      autoClose: 2000, // 2 sec
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  };
   return (
+    
     <>
       <div className="text-center my-5">
         <h6 className="text-danger fw-bold mb-1">For you</h6>
@@ -15,7 +31,7 @@ const EndSection = () => {
         ></div>
 
         <h2 className="fw-bold mb-3">Top featured products</h2>
-        <button className="btn btn-primary rounded-pill px-4">View All</button>
+        <button className="btn btn-primary rounded-pill px-4" onClick={showLoginToast}>View All</button>
       </div>
       <div className="container d-flex flex-direction-row gap-4">
         <div className="card" style={{ width: "18rem" }}>
@@ -80,6 +96,7 @@ const EndSection = () => {
         </div>
 
       </div>
+         <ToastContainer />
     </>
   );
 };
