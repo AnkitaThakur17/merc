@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <>
       {/* Fixed Wrapper */}
-      <div style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 1030 }}>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 1030,
+        }}
+      >
         {/* Navbar 1 */}
         <nav
           className="navbar navbar-expand-lg"
@@ -11,7 +21,10 @@ const Navbar = () => {
           }}
         >
           <div className="container">
-            <img src="logo.webp" alt="Logo" />
+             <Link to="/" className="nav-link">
+               <img src="logo.webp" alt="Logo" />
+             </Link>
+          
 
             <form className="d-flex mx-auto w-50">
               <div className="input-group">
@@ -37,7 +50,11 @@ const Navbar = () => {
                   className="ms-1"
                 />
               </div>
-              <i className="bi bi-person-circle fs-5"></i>
+
+              <Link to="/login" className="nav-link">
+                <i className="bi bi-person-circle fs-5"></i>
+              </Link>
+              {/* <i className="bi bi-person-circle fs-5"></i> */}
               <div className="d-flex align-items-center">
                 <img
                   src="https://flagcdn.com/w20/us.png"
@@ -90,4 +107,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
