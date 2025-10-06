@@ -1,6 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [activeTab, setActiveTab] = useState("Supermarket");
+  const renderContent = () => {
+    switch (activeTab) {
+      case "Supermarket":
+        return <p>Welcome to Supermarket content !</p>;
+      case "Combo":
+        return <p>Combo offers section here !</p>;
+      case "Shop":
+        return <p>Shop items detail here !</p>;
+      case "Store":
+        return <p>Store details here !</p>;
+      case "Sell":
+        return <p>Sell items here !</p>;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       {/* Fixed Wrapper */}
@@ -21,10 +40,9 @@ const Navbar = () => {
           }}
         >
           <div className="container">
-             <Link to="/" className="nav-link">
-               <img src="logo.webp" alt="Logo" />
-             </Link>
-          
+            <Link to="/" className="nav-link">
+              <img src="logo.webp" alt="Logo" />
+            </Link>
 
             <form className="d-flex mx-auto w-50">
               <div className="input-group">
@@ -68,7 +86,7 @@ const Navbar = () => {
         </nav>
 
         {/* Navbar 2 */}
-        <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+        {/* <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
           <div className="container">
             <ul className="navbar-nav gap-4 fw-semibold">
               <li className="nav-item">
@@ -98,7 +116,40 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> */}
+
+
+        <div>
+      {/* Nav Tabs */}
+      <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+        <div className="container">
+          <ul className="navbar-nav gap-4 fw-semibold">
+            {["Supermarket", "Combo", "Shop", "Store", "Sell"].map((tab) => (
+              <li className="nav-item" key={tab}>
+                <button
+                  className={`nav-link text-dark ${
+                    activeTab === tab ? "active border-bottom border-primary" : ""
+                  }`}
+                  onClick={() => setActiveTab(tab)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  {tab}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      {/* Content Section */}
+      <div className="container mt-2">
+        <div className="card p-4 shadow-sm">{renderContent()}</div>
+      </div>
+    </div>
       </div>
 
       <div style={{ height: "130px" }}></div>

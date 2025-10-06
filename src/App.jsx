@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Section from "./components/SecondFooter";
 import Supermarket from "./components/Supermarket";
 import Login from "./pages/Login";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               </>
             }
           />
+            <Route path="/products" element={<Products/>} />
 
           {/*Login Page Route */}
           <Route

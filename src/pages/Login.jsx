@@ -9,6 +9,10 @@ const Login = () => {
     alert("Logging in");
   };
 
+
+  const [date,setDate] = useState("")
+  const [time,setTime] = useState("")
+
  return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
       <div className="card shadow p-4" style={{ width: "380px", borderRadius: "12px" }}>
@@ -28,6 +32,25 @@ const Login = () => {
             </a>
           </div>
         </div>
+       <div className="mb-3">
+        <label className="form-label fw-semibold">Date of Birth</label>
+        <input 
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+        
+        className="form-control" placeholder="Enter DOB"/>  
+       </div>
+
+       <div className="mb-3">
+        <label className="form-label fw-semibold">Choose Time</label>
+        <input 
+        type="time"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+        
+        className="form-control" placeholder="Choose Time"/>  
+       </div>
 
         <button
           className="btn btn-primary w-100 rounded-pill fw-semibold mb-3"

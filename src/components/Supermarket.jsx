@@ -1,5 +1,4 @@
-import { toast,ToastContainer} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 const Supermarket = () => {
   const cards = [
@@ -12,19 +11,10 @@ const Supermarket = () => {
     { img: "orange.webp" },
     { img: "cola.webp" },
   ];
-
-   const showLoginToast = () => {
-    toast.warn("Login first!", {
-      position: "top-center",
-      autoClose: 2000, // 2 sec
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
-    });
-  };
-
+ const navigate = useNavigate()
+ const handleViewMore = ()=>{
+  navigate("/products")
+ }
   return (
     <>
       {/* Heading Section */}
@@ -42,7 +32,7 @@ const Supermarket = () => {
         ></div>
 
         <h2 className="fw-bold mb-3">Supermarket</h2>
-        <button className="btn btn-primary rounded-pill px-4" onClick={showLoginToast} >View All</button>
+        <button className="btn btn-primary rounded-pill px-4"onClick={handleViewMore}>View All</button>
       </div>
 
       {/* Main Section */}
@@ -88,7 +78,6 @@ const Supermarket = () => {
           </div>
         </div>
       </div>
-      <ToastContainer/>
     </>
   );
 };
