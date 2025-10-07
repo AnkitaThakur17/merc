@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="container">
             <ul className="navbar-nav d-flex flex-row gap-4 fw-semibold mb-0">
               <li className="nav-item">
-                <Link to="/supermarket" className="nav-link text-dark">
+                <Link to="/products" className="nav-link text-dark">
                   Supermarket
                 </Link>
               </li>
@@ -90,7 +90,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/sell" className="nav-link text-dark">
+                <Link to="/about" className="nav-link text-dark">
                   Sell
                 </Link>
               </li>

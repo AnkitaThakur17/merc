@@ -9,6 +9,7 @@ import Supermarket from "./components/Supermarket";
 import Login from "./pages/Login";
 import Products from "./pages/Products";
 import Shop from "./pages/Shop";
+import AboutUs from "./pages/About";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           />
             <Route path="/products" element={<Products/>} />
             <Route path="/shop" element={<Shop/>}/>
+            <Route path="/about" element={<AboutUs/>}/>
 
           {/*Login Page Route */}
           <Route
