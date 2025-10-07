@@ -1,5 +1,5 @@
 // /pages/ProductsPage.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Products = () => {
   //Generate 100 fake products

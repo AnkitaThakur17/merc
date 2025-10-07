@@ -1,5 +1,4 @@
-import { toast,ToastContainer} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 const Combo = () => {
   const cards = [
@@ -12,18 +11,6 @@ const Combo = () => {
     { img: "orange.webp" },
     { img: "cola.webp" },
   ];
-
-  const showLoginToast = () => {
-  toast.warn("Login first!", {
-    position: "top-center",
-    autoClose: 2000, // 2 sec
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    theme: "colored",
-  });
-};
 
   return (
     <>
@@ -42,7 +29,9 @@ const Combo = () => {
         ></div>
 
         <h2 className="fw-bold mb-3">Combo</h2>
-        <button className="btn btn-primary rounded-pill px-4" onClick={showLoginToast} >View All</button>
+        <Link to="/shop" className="btn btn-primary rounded-pill px-4" >
+        View all
+        </Link>
       </div>
 
       {/* Main Section */}
@@ -88,7 +77,6 @@ const Combo = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 };

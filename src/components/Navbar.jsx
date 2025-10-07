@@ -1,28 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("Supermarket");
-  const renderContent = () => {
-    switch (activeTab) {
-      case "Supermarket":
-        return <p>Welcome to Supermarket content !</p>;
-      case "Combo":
-        return <p>Combo offers section here !</p>;
-      case "Shop":
-        return <p>Shop items detail here !</p>;
-      case "Store":
-        return <p>Store details here !</p>;
-      case "Sell":
-        return <p>Sell items here !</p>;
-      default:
-        return null;
-    }
-  };
-
   return (
     <>
-      {/* Fixed Wrapper */}
       <div
         style={{
           position: "fixed",
@@ -72,7 +52,7 @@ const Navbar = () => {
               <Link to="/login" className="nav-link">
                 <i className="bi bi-person-circle fs-5"></i>
               </Link>
-              {/* <i className="bi bi-person-circle fs-5"></i> */}
+
               <div className="d-flex align-items-center">
                 <img
                   src="https://flagcdn.com/w20/us.png"
@@ -85,73 +65,41 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Navbar 2 */}
-        {/* <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+        {/* Navbar 2*/}
+        <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
           <div className="container">
-            <ul className="navbar-nav gap-4 fw-semibold">
+            <ul className="navbar-nav d-flex flex-row gap-4 fw-semibold mb-0">
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
+                <Link to="/supermarket" className="nav-link text-dark">
                   Supermarket
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
+                <Link to="/combo" className="nav-link text-dark">
                   Combo
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
+                <Link to="/shop" className="nav-link text-dark">
                   Shop
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
+                <Link to="/store" className="nav-link text-dark">
                   Store
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
+                <Link to="/sell" className="nav-link text-dark">
                   Sell
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
-        </nav> */}
-
-
-        <div>
-      {/* Nav Tabs */}
-      <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
-        <div className="container">
-          <ul className="navbar-nav gap-4 fw-semibold">
-            {["Supermarket", "Combo", "Shop", "Store", "Sell"].map((tab) => (
-              <li className="nav-item" key={tab}>
-                <button
-                  className={`nav-link text-dark ${
-                    activeTab === tab ? "active border-bottom border-primary" : ""
-                  }`}
-                  onClick={() => setActiveTab(tab)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                >
-                  {tab}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* Content Section */}
-      <div className="container mt-2">
-        <div className="card p-4 shadow-sm">{renderContent()}</div>
-      </div>
-    </div>
+        </nav>
       </div>
 
+      {/* Spacer so fixed navbars don't cover content */}
       <div style={{ height: "130px" }}></div>
     </>
   );

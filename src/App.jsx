@@ -8,6 +8,7 @@ import Section from "./components/SecondFooter";
 import Supermarket from "./components/Supermarket";
 import Login from "./pages/Login";
 import Products from "./pages/Products";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             }
           />
             <Route path="/products" element={<Products/>} />
+            <Route path="/shop" element={<Shop/>}/>
 
           {/*Login Page Route */}
           <Route
