@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Products from "./pages/Products";
 import Shop from "./pages/Shop";
 import AboutUs from "./pages/About";
+import Store from "./pages/Store";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/products" element={<Products/>} />
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/about" element={<AboutUs/>}/>
+            <Route path="/store" element={<Store/>}/>
 
           {/*Login Page Route */}
           <Route
@@ -50,7 +52,7 @@ function App() {
         </Routes>
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;
